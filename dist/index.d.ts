@@ -1,5 +1,5 @@
 import Condition from './Condition';
 import LazyImage from './LazyImage';
-import Loading from './Loading';
-export { Condition, LazyImage, Loading };
+import Flexible from './Flexible';
+export { Condition, LazyImage, Flexible };
 //# sourceMappingURL=index.d.ts.map

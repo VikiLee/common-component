@@ -5,6 +5,7 @@
 ## 目录
 - [Condition](#condition)
 - [LazyImage](#lazyimage)
+- [Flexible](#flexible)
 
 ## Condition
 用于条件渲染
@@ -31,4 +32,42 @@
 ```
 <LazyImage src={url} width={100} height={100}/>
 ```
+
+## Flexible
+用于自适应布局，根据容器的宽度控制一行显示多少元素以及自适应控制元素之间的边距。
+### usage
+```
+import React, { useRef } from 'react'
+export default(): React.ReactElement => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  return (
+    <div ref={containerRef}>
+      <Flexible 
+        containerRef={containerEl} 
+        itemWidth={220} 
+        maxRows={6} 
+        minRows={4} 
+        className="product-item">
+        <>
+          item1
+        </>
+        <>
+          item2
+        </>
+        <>
+          item3
+        </>
+      </Flexible>
+    </div>
+  )
+}
+```
+
+property | description | type | required
+---|--- | --- | ---
+containerRef | 容器元素的ref，自适应需要动态获取容器的宽度 | React.RefObject<HTMLElement> | true
+itemWidth | 每个元素的宽度 | number | true
+maxRows | 一行最多显示多少个元素 | number | false
+minRows | 一行至少显示多少个元素 | number | false
+... | 普通元素属性 | React.HTMLProps<HTMLDivElement> | false
 

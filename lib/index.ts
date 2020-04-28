@@ -1,5 +1,5 @@
 import Condition from './Condition'
 import LazyImage from './LazyImage'
-import Loading from './Loading'
+import Flexible from './Flexible'
 
-export { Condition, LazyImage, Loading }
+export { Condition, LazyImage, Flexible }

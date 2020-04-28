@@ -8,7 +8,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var defaultUrl = require('@mkt/common-component/dist/LazyImage/default-image.svg');
+var defaultUrl = require('common-component/dist/LazyImage/default-image.svg');
 function getClientHeight() {
     var clientHeight = 0;
     if (document.body.clientHeight && document.documentElement.clientHeight) {

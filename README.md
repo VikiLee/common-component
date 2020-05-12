@@ -44,7 +44,7 @@ export default(): React.ReactElement => {
   return (
     <div ref={containerRef}>
       <Flexible 
-        containerRef={containerEl} 
+        containerRef={containerRef} 
         itemWidth={220} 
         maxRows={6} 
         minRows={4} 
@@ -76,7 +76,6 @@ minRows | 一行至少显示多少个元素 | number | false
 吸顶组件
 ### usage
 ```
-import { Sticky } from '@mkt/common-component'
  <Sticky top={56}>
     <div style={{height: 50, borderTop: '1px solid #ddd'}}> 
       nav

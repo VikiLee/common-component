@@ -6,6 +6,7 @@
 - [Condition](#condition)
 - [LazyImage](#lazyimage)
 - [Flexible](#flexible)
+- [Sticky](#sticky)
 
 ## Condition
 用于条件渲染
@@ -70,4 +71,19 @@ itemWidth | 每个元素的宽度 | number | true
 maxRows | 一行最多显示多少个元素 | number | false
 minRows | 一行至少显示多少个元素 | number | false
 ... | 普通元素属性 | React.HTMLProps<HTMLDivElement> | false
+
+## Sticky
+吸顶组件
+### usage
+```
+import { Sticky } from '@mkt/common-component'
+ <Sticky top={56}>
+    <div style={{height: 50, borderTop: '1px solid #ddd'}}> 
+      nav
+    </div>
+  </Sticky>
+```
+property | description | type | required
+---|--- | --- | ---
+top | 需要吸顶的顶部位置，当滚动到距离顶部top到位置时，会吸顶，默认为0 | number | false
 

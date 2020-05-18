@@ -66,9 +66,14 @@ const Sticky = ({ children, top }: Props): React.ReactElement => {
       getWebViewType()._isInUIWebView ? iOSUIWebViewHandler() : commonHandler();
     }
 
-    window.addEventListener('scroll', onScroll);
+    getWebViewType()._isInUIWebView 
+      ? window.onscroll = onScroll
+      : window.addEventListener('scroll', onScroll);
 
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.onscroll = null;
+    };
 
   },[])
 

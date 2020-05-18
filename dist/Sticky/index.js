@@ -61,8 +61,13 @@ var Sticky = function (_a) {
         var onScroll = function () {
             getWebViewType()._isInUIWebView ? iOSUIWebViewHandler() : commonHandler();
         };
-        window.addEventListener('scroll', onScroll);
-        return function () { return window.removeEventListener('scroll', onScroll); };
+        getWebViewType()._isInUIWebView
+            ? window.onscroll = onScroll
+            : window.addEventListener('scroll', onScroll);
+        return function () {
+            window.removeEventListener('scroll', onScroll);
+            window.onscroll = null;
+        };
     }, []);
     react_1.useEffect(function () {
         var $innerCtn = window.document.querySelector('.sticky-inner-container');

@@ -1,5 +1,7 @@
 import React from 'react'
 
-export default (props: { children: React.ReactElement| React.ReactElement[] | null }): React.ReactElement => {
-  return <>{ props.children }</>
+import{ Wrapper } from './index'
+
+export default (props: { condition: boolean | number | null | undefined | string, children: React.ReactNode }): React.ReactNode => {
+  return Wrapper(props.children)
 }
